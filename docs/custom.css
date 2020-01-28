@@ -1,0 +1,91 @@
+.swagger-ui .topbar{
+    padding: 30px 0 !important;
+    background-color: #4B4B4B !important;
+    border-bottom: 1px solid #F7941D !important;
+}
+body{
+    background-color: #e6e7e8 !important;
+}
+.wrapper{
+    background-color: #fff;
+}
+.topbar-wrapper{
+    background-color: #4B4B4B !important;
+}
+.topbar .wrapper{
+    background-color: #4B4B4B !important;
+}
+.swagger-ui .topbar a {
+    color: #fff !important; 
+}
+*{
+    font-family: "Roboto" !important;
+}
+.swagger-ui .topbar .download-url-wrapper .download-url-button{
+    background: #ffffff !important;
+    color: #4b4b4b !important;
+    border: 1px solid #ffffff !important;
+    padding: 2px 30px !important;
+    font-size: 0.975rem !important;
+    transition: all 300ms ease-in-out;
+    border-radius: 4px !important;
+    font-weight: 400 !important;
+}
+.swagger-ui .topbar .download-url-wrapper .download-url-button:hover{
+    background: #4b4b4b !important;
+    color: #fff !important;
+    border: 1px solid #fff !important;
+}
+.scheme-container{
+    border-bottom: 1px solid #F7941D !important;
+    background-color: #6D6E71 !important;
+}
+.schemes-title{
+    color: #fff !important;
+}
+.swagger-ui .scheme-container .schemes{
+    background-color: #6D6E71 !important;
+    
+}
+.swagger-ui .info{
+    padding: 20px 0;
+}
+.swagger-ui .info p{
+    color: #4b4b4b !important;
+}
+
+
+
+.swagger-ui .info a{
+    color: #4b4b4b !important;
+}
+
+.swagger-ui .info a:hover{
+    color: #abaaaa !important;
+}
+
+.swagger-ui .info code{
+    color: #F7941D;
+}
+
+.swagger-ui .btn.authorize{
+    color: #fff !important;
+    border-color: #fff !important;
+}
+.swagger-ui .btn.authorize svg{
+    fill:#fff !important;
+}
+
+.swagger-ui .opblock.opblock-post .opblock-summary-method, .opblock-summary .opblock-summary-put{
+    background: #F7941D !important;
+}
+.swagger-ui .opblock.opblock-post, .opblock.opblock-put{
+    background: #F7941D11 !important;
+    border-color: #F7941D !important;
+}
+.swagger-ui .opblock .opblock-section-header{
+    background: #F7941D !important;
+}
+.swagger-ui .opblock-body pre{
+    background-color: #4b4b4b !important;
+}

@@ -1,0 +1,296 @@
+swagger: "2.0"
+info:
+  description: "This is a open wrapper around the VocBench API."
+  version: "0.1.0"
+  title: "AGINFRA Registry of Semantic Resources"
+  termsOfService: ""
+  contact:
+    email: "itadmin@agroknow.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "vocbench1.d4science.org"
+basePath: "/api"
+schemes:
+- "https"
+paths:
+  /getProjects:
+    post:
+      tags:
+      - "Projects"
+      summary: ""
+      description: Lists all uploaded VocBench projects.
+      operationId: ""
+      produces:
+      - "application/json"
+      responses:
+        400:
+          description: "Invalid input"
+  /getTopConcepts:
+    post:
+      tags:
+      - "Concepts"
+      summary: ""
+      description: Gets the top Concepts of a given Project. 
+      operationId: ""
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+        - name: Project
+          in: formData
+          description: Name of the Project, as defined in VocBench, e.g. LandAndWater.
+          required: true
+          type: string
+          default: LandAndWater
+
+      responses:
+        400:
+          description: "Invalid input"
+  /getClass:
+    post:
+      tags:
+      - "Classes"
+      summary: ""
+      description: Returns more details about a given Class.
+      operationId: ""
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+        - name: Project
+          in: formData
+          description: Name of the Project, as defined in VocBench, e.g. LandAndWater.
+          required: true
+          type: string
+          default: LandAndWater
+
+        - name: Url
+          in: formData
+          description: The Class URI as listed in VocBench, e.g. http://www.w3.org/2004/02/skos/core#Concept
+          required: true
+          type: string
+          default: http://www.w3.org/2004/02/skos/core#Concept
+
+      responses:
+        400:
+          description: "Invalid input"
+
+  /getSubClass:
+    post:
+      tags:
+      - "Classes"
+      summary: ""
+      description: Fetches subclasses of a given Class, of a VocBench Project.
+      operationId: ""
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+        - name: Project
+          in: formData
+          description: Name of the Project, as defined in VocBench, e.g. LandAndWater.
+          required: true
+          type: string
+          default: LandAndWater
+
+        - name: Url
+          in: formData
+          description: The Class URI as listed in VocBench, e.g. http://www.w3.org/2004/02/skos/core#Concept
+          required: true
+          type: string
+          default: http://www.w3.org/2002/07/owl#Thing
+      responses:
+        400:
+          description: "Invalid input"      
+          
+          
+          
+  /getConcept:
+    post:
+      tags:
+      - "Concepts"
+      summary: ""
+      description: Returns more details about a given Concept.
+      operationId: ""
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+        - name: Project
+          in: formData
+          description: Name of the Project, as defined in VocBench, e.g. LandAndWater.
+          required: true
+          type: string
+          default: LandAndWater
+        - name: Url
+          in: formData
+          description: It is the url of the Concept as listed in VocBench  e.g. http://www.w3.org/2004/02/skos/core#Concept
+          required: true
+          type: string
+          default: http://www.w3.org/2004/02/skos/core#Concept
+      responses:
+        400:
+          description: "Invalid input"         
+  /getConceptInstances:
+    post:
+      tags:
+      - "Concepts"
+      summary: ""
+      description: Lists all instances of a given Concept, of a VocBench Project.
+      operationId: ""
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+        - name: Project
+          in: formData
+          description: Name of the Project, as defined in VocBench, e.g. LandAndWater.
+          required: true
+          type: string
+          default: LandAndWater
+        - name: Url
+          in: formData
+          description: The Concept URI, as listed in VocBench  e.g. http://www.w3.org/2004/02/skos/core#Concept
+          required: true
+          type: string
+          default: http://www.w3.org/2004/02/skos/core#Concept
+      responses:
+        400:
+          description: "Invalid input"   
+  /getTopProperties:
+    post:
+      tags:
+      - "Properties"
+      summary: ""
+      description: Gets the top Properties of a given Project. 
+      operationId: ""
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+        - name: Project
+          in: formData
+          description: Name of the Project, as defined in VocBench, e.g. LandAndWater.
+          required: true
+          type: string
+          default: LandAndWater
+      responses:
+        400:
+          description: "Invalid input"             
+
+  /getSubProperties:
+    post:
+      tags:
+      - "Properties"
+      summary: ""
+      description: Fetches the Sub-properties of a givent VocBench project.
+      operationId: ""
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+        - name: Project
+          in: formData
+          description: Name of the Project, as defined in VocBench, e.g. LandAndWater.
+          required: true
+          type: string
+          default: LandAndWater
+        - name: Url
+          in: formData
+          description: The Property URI, as listed in VocBench, e.g. http://www.w3.org/2000/01/rdf-schema#seeAlso
+          required: true
+          type: string
+          default: http://www.w3.org/2000/01/rdf-schema#seeAlso
+      responses:
+        400:
+          description: "Invalid input"   
+  /getProperty:
+    post:
+      tags:
+      - "Properties"
+      summary: 
+      description: Returns more details about a given Property.
+      operationId: ""
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+        - name: Project
+          in: formData
+          description: Name of the Project, as defined in VocBench, e.g. LandAndWater.
+          required: true
+          type: string
+          default: LandAndWater
+        - name: Url
+          in: formData
+          description: The Property URI, as listed in VocBench, e.g. http://www.w3.org/2000/01/rdf-schema#seeAlso
+          required: true
+          type: string
+          default: http://www.w3.org/2000/01/rdf-schema#seeAlso
+      responses:
+        400:
+          description: "Invalid input"  
+          
+  /getScheme:
+    post:
+      tags:
+      - "Schemes"
+      summary: 
+      description: Returns more details about a given Scheme.
+      operationId: ""
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+        - name: Project
+          in: formData
+          description: Name of the Project, as defined in VocBench, e.g. LandAndWater.
+          required: true
+          type: string
+          default: LandAndWater
+        - name: Url
+          in: formData
+          description: The Scheme URI, as listed in VocBench, e.g. http://www.w3.org/2000/01/rdf-schema#seeAlso
+          required: true
+          type: string
+          default: http://www.w3.org/2000/01/rdf-schema#seeAlso
+      responses:
+        400:
+          description: "Invalid input"            
+  /getAllSchemes:
+    post:
+      tags:
+      - "Schemes"
+      summary: ""
+      description: Lists all Schemes of a given VocBench Project.
+      operationId: ""
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+        - name: Project
+          in: formData
+          description: Name of the Project, as defined in VocBench, e.g. LandAndWater.
+          required: true
+          type: string
+          default: LandAndWater
+        - name: Url
+          in: formData
+          description: The Scheme URI, as listed in VocBench, e.g. http://www.w3.org/2000/01/rdf-schema#seeAlso
+          required: true
+          type: string
+          default: http://www.w3.org/2000/01/rdf-schema#seeAlso
+      responses:
+        400:
+          description: "Invalid input"             
